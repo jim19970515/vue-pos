@@ -20,8 +20,8 @@ const newDate = ref('')
 setInterval(()=>{
 	let date = new Date()
 	const year = date.getFullYear()
-	const Month = date.getMonth()
-	const day = date.getDay()
+	const Month = date.getMonth()+1
+	const day = date.getDate()
 	const hour = date.getHours()
 	const min = date.getMinutes()
 	newDate.value = `${year}/${Month}/${day} ${hour}:${min}`
@@ -54,7 +54,7 @@ const customerStore = useCustomerStore()
 					<productTable/>
 					<p v-if="customerStore.is_paid" class="dark:text-bg-gray-900  dark:bg-gray-400 py-2 text-center rounded-md">已付款</p>
 					<p v-else class="dark:text-white py-2 text-center rounded-md">未付款</p>
-					<button @click="customerStore.checkOut" class="bg-secondary w-full text-white py-2 rounded-md dark:bg-gray-800 dark:active:bg-gray-900">結帳</button>
+					<button :class="customerStore.is_paid?'hidden':''"  @click="customerStore.checkOut" class="bg-secondary w-full text-white py-2 rounded-md dark:bg-gray-800 dark:active:bg-gray-900">結帳</button>
 				</div>
 			</section>
 		</main>
