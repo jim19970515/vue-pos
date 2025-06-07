@@ -10,8 +10,8 @@ export const handleCallApi = async (
   }
 ) => {
   try {
-    // 當 parseArgs.baseUrl 自動帶入 VUE_APP_URL
-    if (!parseArgs.baseUrl) parseArgs.baseUrl = "VUE_APP_URL";
+    // 當 args.baseUrl 自動帶入 VUE_APP_URL
+    if (!args.baseUrl) args.baseUrl = "VUE_POS_URL";
     // 判斷api method 是否為這幾種其一
     if (
       args.method == "GET" ||
@@ -23,7 +23,7 @@ export const handleCallApi = async (
       // axios 封裝
       const config = {
         method: args.method,
-        url: process.env[parseArgs.baseUrl] + args.router
+        url: import.meta.env.args.baseUrl + args.router
       };
       if (args.responseType) {
         config.responseType = args.responseType;
