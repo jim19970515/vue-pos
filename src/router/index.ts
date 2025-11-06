@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Pos from "../views/Pos.vue";
 import Order from "../views/Order.vue";
 import Unpaid from "@/views/Unpaid.vue";
 import Paid from "@/views/Paid.vue";
@@ -11,8 +10,8 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Pos,
+      name: "homeView",
+      component: () => import("@/views/HomeView.vue"),
       redirect: "/order",
       children: [
         {
@@ -67,6 +66,11 @@ const router = createRouter({
       path: "/Details",
       name: "detailsPdf",
       component: Details
+    },
+    {
+      path: "/HomeView2",
+      name: "homeView2",
+      component: () => import("@/views/HomeView2.vue")
     }
   ]
 });
