@@ -32,6 +32,9 @@ importers:
       sweetalert2:
         specifier: ^11.22.0
         version: 11.26.3
+      vue:
+        specifier: ^3.5.12
+        version: 3.5.14(typescript@5.6.3)
       vue-loading-overlay:
         specifier: ^6.0.6
         version: 6.0.6(vue@3.5.14(typescript@5.6.3))
