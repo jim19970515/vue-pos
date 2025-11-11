@@ -1,12 +1,9 @@
+// tsconfig.node.json 是 node 專案的 tsconfig 設定檔，用於編譯 node 專案的 ts 檔案
+//用於 vite.config.ts、vitest.config.ts
+//Vite、eslint、config
 {
   "extends": "@tsconfig/node20/tsconfig.json",
-  "include": [
-    "vite.config.*",
-    "vitest.config.*",
-    "cypress.config.*",
-    "nightwatch.conf.*",
-    "playwright.config.*"
-  ],
+  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "nightwatch.conf.*", "playwright.config.*"],
   "compilerOptions": {
     "composite": true,
     "noEmit": true,

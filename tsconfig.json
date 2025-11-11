@@ -1,5 +1,6 @@
+// tsconfig.json 為ts設定檔的root，用於編譯 ts 檔案
 {
-  "files": [],
+  "files": [], //用於指定要編譯的檔案
   "references": [
     {
       "path": "./tsconfig.node.json"
