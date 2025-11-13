@@ -10,12 +10,6 @@ const pinia = createPinia();
 import ElementPlus from "element-plus";
 //element plus icons
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-//=================套件=================
-//輪播套件
-import Swiper from "swiper";
-import "swiper/css";
-//彈窗套件
-import Swal from "sweetalert2";
 //pdf套件
 import jsPDF from "jspdf";
 
@@ -33,7 +27,6 @@ app.use(VueRouterTransition);
 //ui 套件註冊
 app.use(ElementPlus);
 //套件註冊
-app.use(Swal);
 app.use(jsPDF);
 
 // 註冊 Element Plus Icons
