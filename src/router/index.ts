@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Order from "../views/Order.vue";
+
+import Order from "@/views/Order.vue";
 import Unpaid from "@/views/Unpaid.vue";
 import Paid from "@/views/Paid.vue";
 import Details from "@/views/Details.vue";
@@ -70,7 +71,29 @@ const router = createRouter({
     {
       path: "/HomeView2",
       name: "homeView2",
-      component: () => import("@/views/HomeView2.vue")
+      component: () => import("@/views/HomeView2.vue"),
+      children: [
+        {
+          path: "home",
+          name: "home",
+          component: () => import("@/views/HomeView2/Home.vue")
+        },
+        {
+          path: "food",
+          name: "food",
+          component: () => import("@/views/HomeView2/Food.vue")
+        },
+        {
+          path: "pieChart",
+          name: "pieChart",
+          component: () => import("@/views/HomeView2/PieChart.vue")
+        },
+        {
+          path: "history",
+          name: "history",
+          component: () => import("@/views/HomeView2/History.vue")
+        }
+      ]
     }
   ]
 });
