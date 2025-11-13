@@ -2,7 +2,9 @@
 //用於 vite.config.ts、vitest.config.ts
 //Vite、eslint、config
 {
+  // 使用官方 Node 20 預設設定
   "extends": "@tsconfig/node20/tsconfig.json",
+  // 包含的設定檔
   "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "nightwatch.conf.*", "playwright.config.*"],
   "compilerOptions": {
     "composite": true,
