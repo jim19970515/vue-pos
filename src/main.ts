@@ -10,10 +10,6 @@ const pinia = createPinia();
 import ElementPlus from "element-plus";
 //element plus icons
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-//=================套件=================
-//輪播套件
-import Swiper from "swiper";
-import "swiper/css";
 //pdf套件
 import jsPDF from "jspdf";
 
