@@ -1,14 +1,31 @@
+// tsconfig.app.json 是 vue 專案的 tsconfig 設定檔，用於編譯 vue 專案
+//用於 src/ 底下的 .vue、.ts
 {
+  // 基於官方 Vue DOM 設定（內含 Vue + DOM 環境）
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "exclude": ["src/**/__tests__/*"],
-  "compilerOptions": {
-    "composite": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+  // 編譯來源：src 目錄下所有 .ts/.vue 檔
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"], //include：指定要編譯的檔案與路徑
+  "exclude": ["src/**/__tests__/*"], //exclude：不需要編譯的資料夾（如測試）
 
-    "baseUrl": ".",
+  //compilerOptions 編譯選項配置
+  "compilerOptions": {
+    "target": "ESNext", //指定編譯 Js 版本
+    "module": "ESNext", //指定模組系統 (ESM：import 導入 / export 導出)
+    "strict": true, // 開啟所有嚴格型別檢查(嚴格模式)
+    "allowJs": false, // 禁止使用 JS 檔案
+    "noImplicitAny": true, // 禁止隱性 any
+    "composite": true, // 可被上層 tsconfig.json 參考
+    "isolatedModules": true, // 每個檔案獨立編譯，Vite 需要
+    "skipLibCheck": true, // 跳過 node_modules 型別檢查，加快編譯
+    "useDefineForClassFields": true, // 遵守新版 ECMAScript 類別欄位語法
+    "forceConsistentCasingInFileNames": true, // 強制檔名大小寫一致
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", // 暫存編譯資訊，加快二次編譯速度
+    "resolveJsonModule": true, // 支援 import JSON 檔案
+    "types": ["vite/client"], // 讓 import.meta.env 型別生效
+
+    "baseUrl": ".", //已根目錄為基準
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] //@ 代表 src 目錄
     }
   }
 }
