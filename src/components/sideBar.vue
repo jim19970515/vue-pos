@@ -2,7 +2,7 @@
   <div class="w-fit h-full bg-white">
     <ul class="flex flex-col gap-6 h-full p-2 shadow-xl">
       <li v-for="(list, key) in lists" :key="key">
-        <router-link :to="list.path as string" class="list-item">
+        <router-link :to="list.path" class="list-item">
           <component class="w-10" :is="list.icon"></component>
           <span>{{ list.title }}</span>
         </router-link>
@@ -13,11 +13,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const lists = [
+type ListType = {
+  path: string; //路由路徑
+  icon: string; //icon名稱
+  title: string; //標題
+};
+
+const lists: ListType[] = [
   { path: "/homeView2/home", icon: "HomeFilled", title: "home" },
   { path: "/homeView2/food", icon: "Food", title: "food" },
   { path: "/homeView2/pieChart", icon: "PieChart", title: "pieChart" },
-  { path: "/homeView2/history", icon: "GoodsFilled", title: "history" }
+  { path: "/homeView2/history", icon: "GoodsFilled", title: "history" },
 ];
 </script>
 
