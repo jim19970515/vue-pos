@@ -8,7 +8,9 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "format": "prettier --write \"src/**/*.{js,ts,vue,json,css,scss,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
     "@duannx/vue-router-transition": "^1.3.0",
@@ -33,6 +35,8 @@
     "autoprefixer": "^10.4.20",
     "npm-run-all2": "^7.0.1",
     "postcss": "^8.4.47",
+    "prettier": "^3.6.2",
+    "prettier-plugin-vue": "^1.1.6",
     "sass-embedded": "^1.93.3",
     "tailwindcss": "^3.4.14",
     "typescript": "~5.6.0",

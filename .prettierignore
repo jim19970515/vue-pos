@@ -1,0 +1,39 @@
+# Prettier 忽略檔案清單
+# 這些檔案和目錄不會被 Prettier 格式化
+
+# 依賴套件目錄
+node_modules/
+
+# 建置輸出目錄
+dist/
+build/
+.output/
+
+# 快取目錄
+.cache/
+.temp/
+.tmp/
+
+# 日誌檔案
+*.log
+logs/
+
+# 環境變數檔案
+.env
+.env.local
+.env.*.local
+
+# 鎖定檔案（通常不需要格式化）
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 自動生成的檔案
+auto-imports.d.ts
+components.d.ts
+
+# 其他
+.DS_Store
+*.min.js
+*.min.css
+
