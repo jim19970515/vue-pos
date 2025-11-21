@@ -9,8 +9,7 @@ module.exports = {
   // ==================== 基本設定 ====================
   // 指定要使用的 Prettier 插件
   // prettier-plugin-vue: 用於格式化 Vue 單文件組件 (.vue)
-  // 已移除以避免在 template 區塊中添加空行的問題
-  // plugins: ["prettier-plugin-vue"],
+  plugins: ["prettier-plugin-vue"],
 
   // ==================== 字串相關設定 ====================
 
@@ -94,7 +93,7 @@ module.exports = {
   // "css": 遵循 CSS display 屬性的預設值
   // "strict": 所有空白字元都是敏感的
   // "ignore": 忽略所有空白字元
-  htmlWhitespaceSensitivity: "css",
+  htmlWhitespaceSensitivity: "ignore",
 
   // Vue 檔案中 script 和 style 標籤的縮排
   // true: 縮排 script 和 style 標籤內的內容
